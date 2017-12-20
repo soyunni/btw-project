@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Spring JDBC Example</title>
+<link rel="stylesheet" type="text/css" href="emp.css">
+<style>
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak,
+	.x-ng-cloak {
+	display: none !important;
+}
+</style>
+</head>
+<body>
+	<h1>Spring JDBC Example</h1>
+	<div ng-app="app" ng-controller="main">
+		<table>
+			<thead>
+				<tr>
+					<th>No</th>
+					<th>Emp's No</th>
+					<th>Name</th>
+					<th>Job</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="e in emps">
+					<td>{{$index+1}}</td>
+					<td ng-cloak>{{e.boardCategory}}</td>
+					<td class="ng-cloak">{{e.boardId}}</td>
+					<td ng-bind="e.job"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module('app', []);
+		angular.module('app').controller('main', function($scope, $http) {
+			$scope.emps = [];
+	
+			$http.get('/api/emps').then(function(response) {
+				$scope.emps = response.data;
+			}).catch(function(error) {
+				alert(error);
+			});
+		});
+	</script>
+</body>
+</html>
