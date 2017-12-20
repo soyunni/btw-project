@@ -5,6 +5,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+/**
+ * Handlebar view 노출
+ * @author psy_world
+ *
+ */
 @Controller
 public class HandlebarsController {
 

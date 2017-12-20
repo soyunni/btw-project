@@ -3,6 +3,11 @@ package com.btw.project.login.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * JSP View 노출
+ * @author psy_world
+ *
+ */
 @Controller
 public class LoginController {
 
