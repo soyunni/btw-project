@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.script.ScriptTemplateConfigurer;
 import org.springframework.web.servlet.view.script.ScriptTemplateViewResolver;
 
-//@Configuration
+@Configuration
 public class HandlebarConfig extends WebMvcConfigurerAdapter {
 
 	@Bean

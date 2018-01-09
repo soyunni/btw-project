@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * @author psy_world
  *
  */
-//@Configuration
+@Configuration
 public class AngularConfig extends WebMvcConfigurerAdapter {
 
 	@Override

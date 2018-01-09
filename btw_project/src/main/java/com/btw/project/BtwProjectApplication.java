@@ -8,10 +8,10 @@ import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
 @PropertySource({
-	"classpath:/config/${spring.profiles.active:dust}/application-${spring.profiles.active:dust}.properties"})
+	"classpath:/config/${spring.profiles.active:jsp}/application-${spring.profiles.active:jsp}.properties"})
 public class BtwProjectApplication extends SpringBootServletInitializer {
 	
-	private static final String DEFAULT_PROFILE = "dust";
+	private static final String DEFAULT_PROFILE = "jsp";
 	private static final String SPRING_PROFILES = "spring.profiles.active";
 
 	public static void main(String[] args) {

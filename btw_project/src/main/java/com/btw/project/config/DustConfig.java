@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
@@ -17,11 +16,9 @@ import org.springframework.web.servlet.view.script.ScriptTemplateViewResolver;
 @Configuration
 public class DustConfig extends WebMvcConfigurerAdapter {
 
-	@Value("${dust.prefix}")
-	private String dustPrefix;
+	private String dustPrefix = "/WEB-INF/dust/";
 	
-	@Value("${dust.suffix}")
-	private String dustSuffix;
+	private String dustSuffix = ".html";
 	/**
      * html 노출 설정
      */
