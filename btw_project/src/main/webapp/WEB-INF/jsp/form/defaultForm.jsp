@@ -9,7 +9,7 @@
 <body>
 
 <h1>BTS 7명 입력 </h1>
-	<form action="form/saveDefaultForm.bt" method="post">
+	<form action="/form/saveDefaultForm.bt" method="post">
 		<input type="text" name="text1" value="">
 		<br/>
 		<input type="text" name="text2" value="">
@@ -20,6 +20,14 @@
 		<br/>
 		<input type="text" name="text5" value="">
 		<br/>
+		
+		<h3>숫자 (text버전)</h3>
+		<input type="text" name="num1" value="">
+		<br/>
+		<input type="text" name="num2" value="">
+		<br/>
+		<input type="text" name="num3" value="">
+		
 		<h3>Radio</h3>
 		<input type="radio" name="radioVal1" value="Y">
 		<input type="radio" name="radioVal1" value="N">

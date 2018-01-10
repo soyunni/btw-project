@@ -1,10 +1,18 @@
 package com.btw.project.test.form.web;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.btw.project.test.form.service.model.FormData;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RequestMapping("/form")
 @Controller
@@ -35,36 +43,68 @@ public class FormController {
 	 * @param request
 	 * @param response
 	 * @return
+	 * @throws IOException 
+	 * @throws JsonMappingException 
+	 * @throws JsonParseException 
 	 */
 	@RequestMapping("/saveDefaultForm.bt")
-	public String saveDefaultForm(HttpServletRequest request, HttpServletResponse response){
+	public String saveDefaultForm(@RequestBody String data, FormData formData, HttpServletRequest request, HttpServletResponse response) throws JsonParseException, JsonMappingException, IOException{
 		
-		//1. requst param
+		//1. == requst param ==
+		//text
 		String text1 = request.getParameter("text1");
 		String text2 = request.getParameter("text2");
 		String text3 = request.getParameter("text3");
 		String text4 = request.getParameter("text4");
 		String text5 = request.getParameter("text5");
 		
-		System.out.println("text1 : " + text1);
-		System.out.println("text2 : " + text2);
-		System.out.println("text3 : " + text3);
-		System.out.println("text4 : " + text4);
-		System.out.println("text5 : " + text5);
+		String num1 = request.getParameter("num1");
+		String num2 = request.getParameter("num2");
+		String num3 = request.getParameter("num3");
 		
-		
+		//radio
 		String radioVal1 = request.getParameter("radioVal1");
-		System.out.println("radioVal1 : " + radioVal1);
-		
+		//check box
 		String checkBox1 = request.getParameter("checkBox1");
-		System.out.println("checkBox1 : " + checkBox1);
+	
+		//1-1. == String to Object ==
+		FormData paramForm = new FormData();
+		//text
+		paramForm.setText1(text1);
+		paramForm.setText2(text2);
+		paramForm.setText3(text3);
+		paramForm.setText4(text4);
+		paramForm.setText5(text5);
+		//int(num)
+		paramForm.setNum1(Integer.parseInt(num1));
+		paramForm.setNum2(Integer.parseInt(num2));
+		paramForm.setNum3(Integer.parseInt(num3));
 		
-		//1-1. String to Object
+		//radio
+		paramForm.setRadioVal1(radioVal1);
+		
+		//checkbox
+		paramForm.setCheckBox1(checkBox1);
+		
+		System.out.println("===============================================");
+		System.out.println("1. request Param ");
+		System.out.println(paramForm);
+		
 		//2. Object
+		System.out.println("===============================================");
+		System.out.println("2. Object param ");
+		System.out.println(formData);
 		
 		//3. String value
+		System.out.println("===============================================");
+		System.out.println("3. String param ");
+		System.out.println(data);
+		System.out.println("=====> Object 변경");
+		ObjectMapper mapper = new ObjectMapper();
+		FormData formDataMapper = mapper.readValue(data, FormData.class);
+		System.out.println("Object Mapper ==> " + formDataMapper);
+		System.out.println("===============================================");
 		
-		
-		return "/form/formTypeList.bt";
+		return "redirect:/form/formTypeList.bt";
 	}
 }
