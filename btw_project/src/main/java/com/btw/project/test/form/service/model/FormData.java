@@ -1,5 +1,7 @@
 package com.btw.project.test.form.service.model;
 
+import java.util.List;
+
 /**
  * Form data 받을 객체
  * @author psy_world
@@ -19,6 +21,9 @@ public class FormData {
 	
 	private String checkBox1 = "";
 	private String radioVal1 = "";
+	
+	private List<FormData> formList;
+	
 	public String getText1() {
 		return text1;
 	}
@@ -79,13 +84,17 @@ public class FormData {
 	public void setRadioVal1(String radioVal1) {
 		this.radioVal1 = radioVal1;
 	}
+	public List<FormData> getFormList() {
+		return formList;
+	}
+	public void setFormList(List<FormData> formList) {
+		this.formList = formList;
+	}
 	@Override
 	public String toString() {
 		return "FormData [text1=" + text1 + ", text2=" + text2 + ", text3=" + text3 + ", text4=" + text4 + ", text5="
 				+ text5 + ", num1=" + num1 + ", num2=" + num2 + ", num3=" + num3 + ", checkBox1=" + checkBox1
-				+ ", radioVal1=" + radioVal1 + "]";
+				+ ", radioVal1=" + radioVal1 + ", formList=" + formList + "]";
 	}
-	
-	
 	
 }
