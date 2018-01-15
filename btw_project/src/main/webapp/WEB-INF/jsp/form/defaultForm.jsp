@@ -41,9 +41,6 @@
 		<input type="submit" value="Àü¼Û">
 	</form>
 <hr/>
-<h1> </h1>
-
-<hr/>
 
 
 <h1> </h1>
