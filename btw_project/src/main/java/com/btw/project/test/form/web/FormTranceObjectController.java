@@ -6,6 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.btw.project.test.form.service.model.FormData;
 import com.btw.project.test.form.service.model.MultiData;
@@ -24,6 +27,11 @@ public class FormTranceObjectController {
 	@RequestMapping("/form/multiForm.bt")
 	public String getMultiJsp() {
 		return "/form/multiForm"; //properties에서 설정한 context(/WEB-INF/jsp/) 하위에 위치한 index.jsp 파일(.jsp생략)을 노출 
+	}
+	
+	@RequestMapping("/form/multiParamForm.bt")
+	public String getMultiParamJsp() {
+		return "/form/multiParamForm"; //properties에서 설정한 context(/WEB-INF/jsp/) 하위에 위치한 index.jsp 파일(.jsp생략)을 노출 
 	}
 	
 	//============== response data =======================
@@ -59,12 +67,170 @@ public class FormTranceObjectController {
 
 	
 	//============== multi form data =======================
-	
+	/**
+	 * Object Get ver
+	 * @param multiData
+	 * @return
+	 */
 	@RequestMapping("/form/saveMultiObjectForm.bt")
-	public String saveMultiForm1(MultiData multiData) {
+	public String saveMultiForm1(@RequestParam(value="file", required=false) MultipartFile partcpFile, MultiData multiData) {
 		System.out.println("================= Object Form ==============================");
 		System.out.println(multiData);
+		System.out.println("File ==>" + partcpFile.getOriginalFilename());
 		
 		return "redirect:/form/multiForm.bt";
+	}
+	
+	
+	/**
+	 * Object POST ver
+	 * @param multiData
+	 * @param partcpFile
+	 * @return
+	 */
+	@RequestMapping(value = "/form/saveMultiObjectForm2.bt", method = RequestMethod.POST)
+	public String saveMultiForm2(MultiData multiData, @RequestParam(value="testFile", required=false) MultipartFile partcpFile) {
+		System.out.println("================= Object Form ==============================");
+		System.out.println(multiData);
+		//TODO : f ile전송시 object에 지정된 변수명이랑 동일하게 처리하면 400에러 발생
+		System.out.println("File ==>" + partcpFile.getOriginalFilename());
+		
+		return "redirect:/form/multiForm.bt";
+	}
+	
+	
+	//============ Param Ver ====
+	/**
+	 * Param GET VER 
+	 * @param multiData
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping("/form/saveMultiParamForm.bt")
+	public String saveMultiParamForm1(@RequestParam(value="file", required=false) MultipartFile partcpFile, HttpServletRequest request) {
+		System.out.println(partcpFile);
+		
+		
+		MultiData multiData = new MultiData();
+		
+		String hidden = request.getParameter("hidden");
+		String text = request.getParameter("text");
+		String search = request.getParameter("search");
+		String tel = request.getParameter("tel");
+		String url = request.getParameter("url");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		String month = request.getParameter("month");
+		String week = request.getParameter("week");
+		String time = request.getParameter("time");
+		String dateTimeString = request.getParameter("dateTimeString");
+		
+		//숫자 관련 
+		String num = request.getParameter("number");
+		String numString = request.getParameter("numString");
+		String range = request.getParameter("range");
+		String rangeStirng = request.getParameter("rangeString");
+		
+		String color = request.getParameter("color");
+		String checkBox = request.getParameter("checkBox");
+		String radio = request.getParameter("radio");
+		String file = request.getParameter("file");
+		
+		multiData.setHidden(hidden);
+		multiData.setText(text);
+		multiData.setSearch(search);
+		multiData.setTel(tel);
+		multiData.setUrl(url);
+		multiData.setEmail(email);
+		multiData.setPassword(password);
+		multiData.setMonth(month);
+		multiData.setWeek(week);
+		multiData.setTime(time);
+		multiData.setDateTimeString(dateTimeString);
+		
+		multiData.setNum(Integer.parseInt(num));
+		multiData.setNumString(numString);
+		multiData.setRange(Integer.parseInt(range));
+		multiData.setRangeString(rangeStirng);
+		
+		multiData.setColor(color);
+		multiData.setCheckBox(checkBox);
+		multiData.setRadio(radio);
+		multiData.setFile(file);
+		
+		
+		System.out.println("================= Param Form ==============================");
+		System.out.println(multiData);
+		System.out.println("==========  ======  =======  ==========  =========  ========");
+		
+		
+		return "redirect:/form/multiParamForm.bt";
+	}
+	
+
+	/**
+	 * PARAM POST VER 
+	 * @param partcpFile
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "/form/saveMultiParamForm2.bt", method = RequestMethod.POST)
+	public String saveMultiParamForm2(@RequestParam(value="file", required=false) MultipartFile partcpFile, HttpServletRequest request) {
+		System.out.println("================= Param Form ==============================");
+		System.out.println(partcpFile.getOriginalFilename());
+		
+		
+		MultiData multiData = new MultiData();
+		
+		String hidden = request.getParameter("hidden");
+		String text = request.getParameter("text");
+		String search = request.getParameter("search");
+		String tel = request.getParameter("tel");
+		String url = request.getParameter("url");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		String month = request.getParameter("month");
+		String week = request.getParameter("week");
+		String time = request.getParameter("time");
+		String dateTimeString = request.getParameter("dateTimeString");
+		
+		//숫자 관련 
+		String num = request.getParameter("number");
+		String numString = request.getParameter("numString");
+		String range = request.getParameter("range");
+		String rangeStirng = request.getParameter("rangeString");
+		
+		String color = request.getParameter("color");
+		String checkBox = request.getParameter("checkBox");
+		String radio = request.getParameter("radio");
+		String file = request.getParameter("file");
+		
+		multiData.setHidden(hidden);
+		multiData.setText(text);
+		multiData.setSearch(search);
+		multiData.setTel(tel);
+		multiData.setUrl(url);
+		multiData.setEmail(email);
+		multiData.setPassword(password);
+		multiData.setMonth(month);
+		multiData.setWeek(week);
+		multiData.setTime(time);
+		multiData.setDateTimeString(dateTimeString);
+		
+		multiData.setNum(Integer.parseInt(num));
+		multiData.setNumString(numString);
+		multiData.setRange(Integer.parseInt(range));
+		multiData.setRangeString(rangeStirng);
+		
+		multiData.setColor(color);
+		multiData.setCheckBox(checkBox);
+		multiData.setRadio(radio);
+		multiData.setFile(file);
+		
+		
+		System.out.println("================= Param Form ==============================");
+		System.out.println(multiData);
+		System.out.println("==========  ======  =======  ==========  =========  ========");
+		return "redirect:/form/multiParamForm.bt";
 	}
 }

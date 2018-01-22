@@ -40,7 +40,7 @@ blockquote {
 </style>
 </head>
 <body>
-	<form action="/form/saveMultiObjectForm.bt" method="get" enctype="multipart/form-data">
+	<form action="/form/saveMultiParamForm.bt" method="get" enctype="multipart/form-data">
 		<h1>Multi Form (1)</h1>
 		<table id="attr-input-type-keywords">
 			<thead>
@@ -350,7 +350,9 @@ blockquote {
 							style="vertical-align: inherit;"> 미리 정의 된 목록의 0 개 이상의 값 집합
 						</font></font></td>
 					<td>
-						<input type="checkBox" name="checkBox">
+						<input type="checkBox" name="checkBox" value="C" checked="checked">
+						<input type="checkBox" name="checkBox" value="T" checked="checked">
+						<input type="checkBox" name="checkBox" value="V" checked="checked">
 					</td>
 				</tr>
 				<tr>
@@ -399,12 +401,12 @@ blockquote {
 			</tbody>
 		</table>
 		<br/>
-		<input type="submit" name="test" value="SUBMIT">
+		<input type="submit" value="SUBMIT">
 	</form>
 	
 	<hr/>
 	
-	<form action="/form/saveMultiObjectForm2.bt" method="post" enctype="multipart/form-data">
+	<form action="/form/saveMultiParamForm2.bt" method="post" enctype="multipart/form-data">
 		<h1>Multi Form (2)</h1>
 		<table id="attr-input-type-keywords">
 			<thead>
@@ -714,7 +716,9 @@ blockquote {
 							style="vertical-align: inherit;"> 미리 정의 된 목록의 0 개 이상의 값 집합
 						</font></font></td>
 					<td>
-						<input type="checkBox" name="checkBox" value="" checked="checked">
+						<input type="checkBox" name="checkBox" value="C" checked="checked">
+						<input type="checkBox" name="checkBox" value="T" checked="checked">
+						<input type="checkBox" name="checkBox" value="V" checked="checked">
 					</td>
 				</tr>
 				<tr>
@@ -747,7 +751,7 @@ blockquote {
 								href="sec-forms.html#element-statedef-input-file"
 								id="ref-for-element-statedef-input-file①">File Upload</a>
 						</code></td>
-					<td><font style="vertical-align: inherit;"></font><ass
+					<td><font style="vertical-align: inherit;"></font><a
 						data-link-type="dfn" href="infrastructure.html#mime-type"
 						id="ref-for-mime-type②②"><font
 							style="vertical-align: inherit;"><font
@@ -756,7 +760,7 @@ blockquote {
 							style="vertical-align: inherit;"> 및 선택적으로 파일 이름을 </font><font
 							style="vertical-align: inherit;">가진 0 개 이상의 파일</font></font></td>
 					<td>
-						<input type="file" name="testFile" value="">
+						<input type="file" name="file" value="">
 					</td>
 				</tr>
 				

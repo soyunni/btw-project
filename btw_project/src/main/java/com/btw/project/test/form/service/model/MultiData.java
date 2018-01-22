@@ -18,6 +18,7 @@ public class MultiData {
 	
 	private String password = "";
 	
+	//input date는 JAVA Date타입으로 받을 수 없다.
 	private Date date = null;
 	private String dateString = "";
 	
@@ -25,7 +26,10 @@ public class MultiData {
 	
 	private String week = "";
 	
-	private String dateTime = "";
+	private String time = "";
+	//input datetime-local는 JAVA Date타입으로 받을 수 없다.
+	private String dateTimeString = "";
+	private Date dateTime = null;
 	
 	private int num;
 	private String numString = "";
@@ -131,11 +135,27 @@ public class MultiData {
 		this.week = week;
 	}
 
-	public String getDateTime() {
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public String getDateTimeString() {
+		return dateTimeString;
+	}
+
+	public void setDateTimeString(String dateTimeString) {
+		this.dateTimeString = dateTimeString;
+	}
+
+	public Date getDateTime() {
 		return dateTime;
 	}
 
-	public void setDateTime(String dateTime) {
+	public void setDateTime(Date dateTime) {
 		this.dateTime = dateTime;
 	}
 
@@ -215,12 +235,11 @@ public class MultiData {
 	public String toString() {
 		return "MultiData [hidden=" + hidden + ", text=" + text + ", search=" + search + ", tel=" + tel + ", url=" + url
 				+ ", email=" + email + ", password=" + password + ", date=" + date + ", dateString=" + dateString
-				+ ", month=" + month + ", week=" + week + ", dateTime=" + dateTime + ", num=" + num + ", numString="
-				+ numString + ", range=" + range + ", rangeString=" + rangeString + ", color=" + color + ", checkBox="
-				+ checkBox + ", radio=" + radio + ", file=" + file + ", image=" + image + "]";
-	} 
-	
-	
-	
+				+ ", month=" + month + ", week=" + week + ", time=" + time + ", dateTimeString=" + dateTimeString
+				+ ", dateTime=" + dateTime + ", num=" + num + ", numString=" + numString + ", range=" + range
+				+ ", rangeString=" + rangeString + ", color=" + color + ", checkBox=" + checkBox + ", radio=" + radio
+				+ ", file=" + file + ", image=" + image + "]";
+	}
 
+	
 }
