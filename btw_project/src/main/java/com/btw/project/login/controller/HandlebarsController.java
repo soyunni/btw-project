@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author psy_world
  *
  */
-@Controller
+//@Controller
 public class HandlebarsController {
 
 	@RequestMapping(value = "/handle/index", method = RequestMethod.GET)

@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.8.RELEASE</version>
+		<version>1.5.9.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -44,6 +44,14 @@
 		</dependency>
 		<!--  ::: JSP 적용 END :::  -->
 		
+		<!-- :::::  Build 하지 않고  Static file 수정시 새로고침할때 반영하게 보여줌 :::::  -->
+		<!-- handlebar와 호환이 되지 않아 handlebar 주석처리함 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+	
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -61,13 +69,16 @@
 		</dependency>
 		
 		<!-- ::: handebar 적용 STR ::: -->
-		<dependency>
-            <groupId>com.github.jknack</groupId>
-           <artifactId>handlebars-springmvc</artifactId>
-            <version>4.0.6</version>
-        </dependency>
-        <!-- ::: handebar 적용 END ::: -->
-        
+		<!-- <dependency>
+			<groupId>com.github.jknack</groupId>
+			<artifactId>handlebars-springmvc</artifactId>
+			<version>4.0.6</version>
+		</dependency> -->
+		<!-- ::: handebar 적용 END ::: -->
+		
+		<dependency><!-- jackson -->
+			<groupId>org.codehaus.jackson</groupId><artifactId>jackson-mapper-asl</artifactId><version>1.4.2</version>
+		</dependency>
 		
 	</dependencies>
 
@@ -98,11 +109,12 @@
 				<maven.test.skip>true</maven.test.skip>
 			</properties>
 		</profile>
+		
 	</profiles>
 	
 	
 	<build>
-		<resources>
+		<!-- <resources>
 			<resource>
 				<directory>src/main/java</directory>
 				<includes>
@@ -112,11 +124,22 @@
 			<resource>
 				<directory>src/main/resources</directory>
 			</resource>
-		</resources>
+		</resources> -->
+		
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<addResources>true</addResources>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

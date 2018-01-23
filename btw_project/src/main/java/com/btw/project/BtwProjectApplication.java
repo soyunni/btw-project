@@ -15,6 +15,7 @@ public class BtwProjectApplication extends SpringBootServletInitializer {
 	private static final String SPRING_PROFILES = "spring.profiles.active";
 
 	public static void main(String[] args) {
+		initDefaultProfile(DEFAULT_PROFILE);
 		SpringApplication.run(BtwProjectApplication.class, args);
 	}
 	
