@@ -47,6 +47,9 @@ public class FormDateUtil {
 			} else if(dateString.contains(".")) {
 				System.out.println(".");
 				convertDate = new SimpleDateFormat("yyyy.MM.dd").parse(dateString);
+			} else if( dateString.contains("/")) {
+				System.out.println("/");
+				convertDate = new SimpleDateFormat("yyyy/MM/dd").parse(dateString);
 			} else {
 				System.out.println("else");
 				convertDate = new SimpleDateFormat("yyyyMMdd").parse(dateString);
@@ -141,6 +144,9 @@ public class FormDateUtil {
 		} else if( dateStr.contains(".")) {
 			timeFormat = "yyyy.MM.dd hh:mm";
 			System.out.println(timeFormat);
+		} else if( dateStr.contains("/")) {
+			timeFormat = "yyyy/MM/dd hh:mm";
+			System.out.println(timeFormat);
 		} else {
 			timeFormat = "yyyyMMdd hh:mm";
 			System.out.println(timeFormat);
@@ -153,6 +159,34 @@ public class FormDateUtil {
 		System.out.println("==========================================");
 		return convertDate;
 	}
+	
+
+	//========================================================
+	// String 변환  Date -> String
+	//========================================================
+	/**
+	 * @param type
+	 * @param date
+	 * @return
+	 */
+	public static String getDateToString(String type, Date date) {
+		String dateStr = "";
+		
+		String formatType = type;
+		
+		formatType = formatType.replaceAll("T", " ");
+		SimpleDateFormat transFormat = new SimpleDateFormat(formatType);
+
+		dateStr = transFormat.format(date);
+		
+		if( type.contains("T") ) {
+			dateStr = dateStr.replaceAll(" ", "T");
+		}
+	
+		return dateStr;
+	}
+
+	
 	
 	/**
 	 * Time 형식으로 변경
