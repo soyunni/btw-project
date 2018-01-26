@@ -10,7 +10,7 @@
 
 	<form action="/form/saveDateForm.bt" method="get">
 		<h1> YYYY-MM-DD</h1>
-		<input type="date" name="dateString" value="" >
+		<input type="date" name="dateString" value="${dateStr}" >
 		
 		<br/>
 		<h1>YYYYMMDD</h1> 
@@ -23,6 +23,8 @@
 		<input type="input" name="yyyy" value="" >
 		<input type="input" name="mm" value="" >
 		<input type="input" name="dd" value="" >
+		
+		
 		
 		<input type="submit" value="DATE Àü¼Û">
 	</form>
