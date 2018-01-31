@@ -41,7 +41,7 @@ blockquote {
 </head>
 <body>
 	<form action="/form/saveMultiObjectForm.bt" method="get" enctype="multipart/form-data">
-		<h1>Multi Form (1)</h1>
+		<h1>Multi Form GET TYPE</h1>
 		<table id="attr-input-type-keywords">
 			<thead>
 				<tr>
@@ -71,7 +71,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 임의의 문자열 </font></font></td>
 					<td>
-						<input type="hidden" name="hidden" value="zzzhidden">
+						<input type="hidden" name="hidden" value="hiddenValue">
 					</td>
 				</tr>
 				<tr>
@@ -89,7 +89,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 줄 바꿈이없는 텍스트 </font></font></td>
 					<td>
-						<input type="text" name="text" value="텍스트">
+						<input type="text" name="text" value="">
 					</td>
 				</tr>
 				<tr>
@@ -107,7 +107,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 줄 바꿈이없는 텍스트 </font></font></td>
 					<td>
-						<input type="search" name="search" value="검색">
+						<input type="search" name="search" value="">
 					</td>
 				</tr>
 				<tr>
@@ -125,7 +125,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 줄 바꿈이없는 텍스트 </font></font></td>
 					<td>
-						<input type="tel" name="tel" value="010-2628-1234">
+						<input type="tel" name="tel" value="">
 					</td>
 				</tr>
 				<tr>
@@ -143,7 +143,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 절대 URL </font></font></td>
 					<td>
-						<input type="url" name="url" value="http://theqoo.net/index.php?mid=ktalk&2=normal&page=30">
+						<input type="url" name="url" value="http://localhost:8080/form/multiForm.bt">
 					</td>
 				</tr>
 				<tr>
@@ -162,7 +162,7 @@ blockquote {
 							style="vertical-align: inherit;"> 전자 메일 주소 또는 전자 메일 주소 목록
 						</font></font></td>
 					<td>
-						<input type="email" name="email" value="soyeunni@naver.com">
+						<input type="email" name="email" value="itwise@itwse.co.kr">
 					</td>
 				</tr>
 				<tr>
@@ -180,7 +180,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 줄 바꿈이없는 텍스트 (중요한 정보) </font></font></td>
 					<td>
-						<input type="password" name="password" value="thdusl">
+						<input type="password" name="password" value="itwise01">
 					</td>
 				</tr>
 				<tr>
@@ -217,7 +217,7 @@ blockquote {
 							style="vertical-align: inherit;"> 시간대가없는 1 년과 1 개월로 구성된 날짜
 						</font></font></td>
 					<td>
-						<input type="month" name="month" value="2018-02">
+						<input type="month" name="month" value="">
 					</td>
 				</tr>
 				<tr>
@@ -236,7 +236,7 @@ blockquote {
 							style="vertical-align: inherit;"> 주 년 번호와 시간대가없는 주 번호로 구성된
 								날짜 </font></font></td>
 					<td>
-						<input type="week" name="week" value="2018-W05">
+						<input type="week" name="week" value="">
 					</td>
 				</tr>
 				<tr>
@@ -255,7 +255,7 @@ blockquote {
 							style="vertical-align: inherit;"> 시간대가없는 시간 (시, 분, 초, 분 초)
 						</font></font></td>
 					<td>
-						<input type="time" name="time" value="22:02">
+						<input type="time" name="time" value="">
 					</td>
 				</tr>
 				<tr>
@@ -293,7 +293,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 수치 </font></font></td>
 					<td>
-						<input type="number" name="number" value="2">
+						<input type="number" name="numString" value="">
 					</td>
 				</tr>
 				<tr>
@@ -312,7 +312,8 @@ blockquote {
 							style="vertical-align: inherit;"> 정확한 값이 중요하지 않다는 추가적인 의미를
 								지닌 수치 </font></font></td>
 					<td>
-						<input type="range" name="range" value="5">
+						<input type="range" name="range" value="0">
+						<input type="range" name="rangeString" value="">
 					</td>
 				</tr>
 				<tr>
@@ -331,7 +332,7 @@ blockquote {
 							style="vertical-align: inherit;"> 8 비트 빨강, 녹색 및 파랑 구성
 								요소가있는 sRGB 색상 </font></font></td>
 					<td>
-						<input type="color" name="color" value="#0000ff">
+						<input type="color" name="color" value="">
 					</td>
 				</tr>
 				<tr>
@@ -369,6 +370,7 @@ blockquote {
 							style="vertical-align: inherit;"> 열거 된 값 </font></font></td>
 					<td>
 						<input type="radio" name="radio" value="R" checked="checked">
+						<input type="radio" name="radio" value="L" checked="checked">
 					</td>
 				</tr>
 				<tr>
@@ -435,7 +437,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 임의의 문자열 </font></font></td>
 					<td>
-						<input type="hidden" name="hidden" value="zzzhidden">
+						<input type="hidden" name="hidden" value="hiddenValue">
 					</td>
 				</tr>
 				<tr>
@@ -453,7 +455,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 줄 바꿈이없는 텍스트 </font></font></td>
 					<td>
-						<input type="text" name="text" value="텍스트">
+						<input type="text" name="text" value="">
 					</td>
 				</tr>
 				<tr>
@@ -471,7 +473,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 줄 바꿈이없는 텍스트 </font></font></td>
 					<td>
-						<input type="search" name="search" value="검색">
+						<input type="search" name="search" value="">
 					</td>
 				</tr>
 				<tr>
@@ -489,7 +491,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 줄 바꿈이없는 텍스트 </font></font></td>
 					<td>
-						<input type="tel" name="tel" value="010-2628-1234">
+						<input type="tel" name="tel" value="">
 					</td>
 				</tr>
 				<tr>
@@ -507,7 +509,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 절대 URL </font></font></td>
 					<td>
-						<input type="url" name="url" value="http://theqoo.net/index.php?mid=ktalk&2=normal&page=30">
+						<input type="url" name="url" value="http://localhost:8080/form/multiForm.bt">
 					</td>
 				</tr>
 				<tr>
@@ -526,7 +528,7 @@ blockquote {
 							style="vertical-align: inherit;"> 전자 메일 주소 또는 전자 메일 주소 목록
 						</font></font></td>
 					<td>
-						<input type="email" name="email" value="soyeunni@naver.com">
+						<input type="email" name="email" value="itwise@itwse.co.kr">
 					</td>
 				</tr>
 				<tr>
@@ -544,7 +546,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 줄 바꿈이없는 텍스트 (중요한 정보) </font></font></td>
 					<td>
-						<input type="password" name="password" value="thdusl">
+						<input type="password" name="password" value="itwise01">
 					</td>
 				</tr>
 				<tr>
@@ -581,7 +583,7 @@ blockquote {
 							style="vertical-align: inherit;"> 시간대가없는 1 년과 1 개월로 구성된 날짜
 						</font></font></td>
 					<td>
-						<input type="month" name="month" value="2018-02">
+						<input type="month" name="month" value="">
 					</td>
 				</tr>
 				<tr>
@@ -600,7 +602,7 @@ blockquote {
 							style="vertical-align: inherit;"> 주 년 번호와 시간대가없는 주 번호로 구성된
 								날짜 </font></font></td>
 					<td>
-						<input type="week" name="week" value="2018-W05">
+						<input type="week" name="week" value="">
 					</td>
 				</tr>
 				<tr>
@@ -619,7 +621,7 @@ blockquote {
 							style="vertical-align: inherit;"> 시간대가없는 시간 (시, 분, 초, 분 초)
 						</font></font></td>
 					<td>
-						<input type="time" name="time" value="22:02">
+						<input type="time" name="time" value="">
 					</td>
 				</tr>
 				<tr>
@@ -657,7 +659,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 수치 </font></font></td>
 					<td>
-						<input type="number" name="number" value="2">
+						<input type="number" name="numString" value="">
 					</td>
 				</tr>
 				<tr>
@@ -676,7 +678,8 @@ blockquote {
 							style="vertical-align: inherit;"> 정확한 값이 중요하지 않다는 추가적인 의미를
 								지닌 수치 </font></font></td>
 					<td>
-						<input type="range" name="range" value="5">
+						<input type="range" name="range" value="0">
+						<input type="range" name="rangeString" value="">
 					</td>
 				</tr>
 				<tr>
@@ -695,7 +698,7 @@ blockquote {
 							style="vertical-align: inherit;"> 8 비트 빨강, 녹색 및 파랑 구성
 								요소가있는 sRGB 색상 </font></font></td>
 					<td>
-						<input type="color" name="color" value="#0000ff">
+						<input type="color" name="color" value="">
 					</td>
 				</tr>
 				<tr>
@@ -714,7 +717,7 @@ blockquote {
 							style="vertical-align: inherit;"> 미리 정의 된 목록의 0 개 이상의 값 집합
 						</font></font></td>
 					<td>
-						<input type="checkBox" name="checkBox" value="" checked="checked">
+						<input type="checkBox" name="checkBox">
 					</td>
 				</tr>
 				<tr>
@@ -733,6 +736,7 @@ blockquote {
 							style="vertical-align: inherit;"> 열거 된 값 </font></font></td>
 					<td>
 						<input type="radio" name="radio" value="R" checked="checked">
+						<input type="radio" name="radio" value="L" checked="checked">
 					</td>
 				</tr>
 				<tr>
@@ -747,7 +751,7 @@ blockquote {
 								href="sec-forms.html#element-statedef-input-file"
 								id="ref-for-element-statedef-input-file①">File Upload</a>
 						</code></td>
-					<td><font style="vertical-align: inherit;"></font><ass
+					<td><font style="vertical-align: inherit;"></font><a
 						data-link-type="dfn" href="infrastructure.html#mime-type"
 						id="ref-for-mime-type②②"><font
 							style="vertical-align: inherit;"><font

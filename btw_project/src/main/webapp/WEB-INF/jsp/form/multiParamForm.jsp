@@ -40,7 +40,7 @@ blockquote {
 </style>
 </head>
 <body>
-	<form action="/form/saveMultiParamForm.bt" method="get" enctype="multipart/form-data">
+	<form action="/form/saveMultiParamForm3.bt" method="get" enctype="multipart/form-data">
 		<h1>Multi Form (1)</h1>
 		<table id="attr-input-type-keywords">
 			<thead>
@@ -125,7 +125,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 줄 바꿈이없는 텍스트 </font></font></td>
 					<td>
-						<input type="tel" name="tel" value="010-2628-1234">
+						<input type="tel" name="tel" value="010-1234-5678">
 					</td>
 				</tr>
 				<tr>
@@ -162,7 +162,7 @@ blockquote {
 							style="vertical-align: inherit;"> 전자 메일 주소 또는 전자 메일 주소 목록
 						</font></font></td>
 					<td>
-						<input type="email" name="email" value="soyeunni@naver.com">
+						<input type="email" name="email" value="itwise@naver.com">
 					</td>
 				</tr>
 				<tr>
@@ -180,7 +180,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 줄 바꿈이없는 텍스트 (중요한 정보) </font></font></td>
 					<td>
-						<input type="password" name="password" value="thdusl">
+						<input type="password" name="password" value="qwe123">
 					</td>
 				</tr>
 				<tr>
@@ -293,7 +293,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 수치 </font></font></td>
 					<td>
-						<input type="number" name="number" value="2">
+						<input type="number" name="num" value="2">
 					</td>
 				</tr>
 				<tr>
@@ -491,7 +491,7 @@ blockquote {
 					<td><font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;"> 줄 바꿈이없는 텍스트 </font></font></td>
 					<td>
-						<input type="tel" name="tel" value="010-2628-1234">
+						<input type="tel" name="tel" value="010-1234-5678">
 					</td>
 				</tr>
 				<tr>
@@ -760,7 +760,7 @@ blockquote {
 							style="vertical-align: inherit;"> 및 선택적으로 파일 이름을 </font><font
 							style="vertical-align: inherit;">가진 0 개 이상의 파일</font></font></td>
 					<td>
-						<input type="file" name="file" value="">
+						<input type="file" name="files" value="">
 					</td>
 				</tr>
 				

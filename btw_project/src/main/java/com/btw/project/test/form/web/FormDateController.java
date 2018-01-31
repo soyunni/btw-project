@@ -41,13 +41,23 @@ public class FormDateController {
 	 */
 	@RequestMapping("/form/saveDateForm.bt")
 	public String saveDateForm(@RequestParam(value="dateString") String date1, @RequestParam(value="dateStr") String date2, @RequestParam(value="dotDate") String date3, @RequestParam(value="yyyy") String yyyy, @RequestParam(value="mm") String mm, @RequestParam(value="dd") String dd, HttpServletRequest request) throws ParseException {
-		System.out.println(FormDateUtil.getYMDConvertDate(date1));
-		
-		System.out.println(FormDateUtil.getYMDConvertDate(date2));
-		
-		FormDateUtil.getYMDConvertDate(date3);
-		
-		System.out.println(FormDateUtil.getYMDConvertDate(yyyy, mm, dd));
+		//1. YYYY-MM-DD 
+		System.out.println("1. YYYY-MM-DD -> " + FormDateUtil.getYMDConvertDate("2018-01-30")); //String: YYYY-MM-DD -> JAVA: Date
+
+		//2. YYYYMMDD
+		System.out.println("2. YYYYMMDD -> " + FormDateUtil.getYMDConvertDate("20180130")); //String: YYYYMMDD -> JAVA: Date
+
+		//3. YYYY/MM/DD
+		System.out.println("3.YYYY/MM/DD -> " + FormDateUtil.getYMDConvertDate("2018/01/30")); //String: YYYY/MM/DD -> JAVA: Date
+
+		//4. YYYY.MM.DD
+		System.out.println("4. YYYY.MM.DD -> " +FormDateUtil.getYMDConvertDate("2018.01.30")); //String: YYYY.MM.DD -> JAVA: Date
+
+		//5. YYYY, MM, DD
+		System.out.println("5. YYYY,MM,DD ->" + FormDateUtil.getYMDConvertDate("2018", "01", "30")); //String: YYYY,MM,DD -> JAVA: Date
+
+		//5. YYYY-MM-DDThh:mm
+		System.out.println("6.  YYYY-MM-DDThh:mm -> " +FormDateUtil.getDateTimeConvertDate("2018.01.30T15:59")); //String: YYYY-MM-DDThh:mm -> JAVA: Date
 		
 		return "redirect:/form/dateForm.bt";
 	}
@@ -89,7 +99,7 @@ public class FormDateController {
 	@RequestMapping("/form/saveDateTimeForm.bt")
 	public String saveDateTime(HttpServletRequest request) throws ParseException {
 		
-		String timeStr1 = request.getParameter("timeStr1");
+		/*String timeStr1 = request.getParameter("timeStr1");
 		
 		String date = request.getParameter("date");
 		String time = request.getParameter("time");
@@ -120,10 +130,65 @@ public class FormDateController {
 		
 		FormDateUtil.getDateTimeConvertDate(yymmdd, timeStr, amPm);
 		FormDateUtil.getDateTimeConvertDate(timeStr, amPm, yymmdd);
-		FormDateUtil.getDateTimeConvertDate(amPm, timeStr, yymmdd);
+		FormDateUtil.getDateTimeConvertDate(amPm, timeStr, yymmdd);*/
 		
+		
+		//1. YYYY-MM-DDThh:mm
+		System.out.println("1. YYYY-MM-DD -> " + FormDateUtil.getDateTimeConvertDate("2018-01-30T15:29") ); //String: YYYY-MM-DDThh:mm -> JAVA: Date
+
+		//2. YYYY.MM.DD hh:mm
+		System.out.println("2. YYYY.MM.DD hh:mm -> " + FormDateUtil.getDateTimeConvertDate("2018.01.30 14:22") ); //String: YYYY.MM.DD hh:mm -> JAVA: Date
+
+		//3. YYYY/MM/DD, hh:mm
+		System.out.println("3. YYYY/MM/DD, hh:mm -> " + FormDateUtil.getDateTimeConvertDate("2018/01/30", "20:15") ); //String: YYYY/MM/DD, hh:mm -> JAVA: Date
+
+		//4. YYYYMMDD, hh:mm, am/pm
+		System.out.println("4. YYYYMMDD, hh:mm, am/pm -> " + FormDateUtil.getDateTimeConvertDate("20180130", "am", "08:30" ) ); //String: YYYYMMDD, hh:mm, am/pm -> JAVA: Date
 		
 		return "redirect:/form/dateTimeForm.bt";
+	}
+	
+	
+	//=====================================================
+	// Date ---> String 
+	//=====================================================
+	
+	@RequestMapping("/form/dateStringForm.bt")
+	public String getDateConvertStringForm(Model view) {
+		
+		Date date = new Date();
+		
+		//1. "YYYY-MM-DD"
+		System.out.println("1. YYYY-MM-DD -> " + FormDateUtil.getDateToString("YYYY-MM-DD", date)); //JAVA : DATE -> String : "YYYY-MM-DD"
+
+		//2. "YYYYMMDD"
+		System.out.println("2. YYYYMMDD -> " + FormDateUtil.getDateToString("YYYYMMDD", date)); //JAVA : DATE -> String : "YYYYMMDD"
+
+		//3. "YYYY/MM/DD"
+		System.out.println("3. YYYY/MM/DD -> " + FormDateUtil.getDateToString("YYYY/MM/DD", date)); //JAVA : DATE -> String : "YYYY/MM/DD"
+
+		//4. "YYYY"
+		System.out.println("4. YYYY -> " + FormDateUtil.getDateToString("YYYY", date)); //JAVA : DATE -> String : "YYYY"
+
+		//5. "MM"
+		System.out.println("5. MM -> " + FormDateUtil.getDateToString("MM", date)); //JAVA : DATE -> String : "MM"
+
+		//6. "DD"
+		System.out.println("6. DD -> " + FormDateUtil.getDateToString("DD", date)); //JAVA : DATE -> String : "DD"
+
+		//7. "YYYY-MM-DD"
+		System.out.println("7. YYYY-MM-DD -> " + FormDateUtil.getDateToString("YYYY-MM-DD", date)); //JAVA : DATE -> String : "YYYY-MM-DD"
+
+		//8. "YYYY-MM-DDThh:mm"
+		System.out.println("8. YYYY-MM-DDThh:mm -> " + FormDateUtil.getDateToString("YYYY-MM-DDThh:mm", date)); //JAVA : DATE -> String : "YYYY-MM-DDThh:mm"
+
+		//9. "YYYY.MM.DD hh:mm"
+		System.out.println("9. YYYY.MM.DD hh:mm -> " + FormDateUtil.getDateToString("YYYY.MM.DD hh:mm", date)); //JAVA : DATE -> String : "YYYY.MM.DD hh:mm"
+
+		//10. "hh:mm"
+		System.out.println("10. hh:mm -> " + FormDateUtil.getDateToString("hh:mm", date)); //JAVA : DATE -> String : "hh:mm"
+	
+		return "/form/date/dateTimeForm";
 	}
 
 }

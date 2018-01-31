@@ -89,11 +89,9 @@ public class FormTranceObjectController {
 	 * @return
 	 */
 	@RequestMapping(value = "/form/saveMultiObjectForm2.bt", method = RequestMethod.POST)
-	public String saveMultiForm2(MultiData multiData, @RequestParam(value="testFile", required=false) MultipartFile partcpFile) {
+	public String saveMultiForm2(MultiData multiData) {
 		System.out.println("================= Object Form ==============================");
 		System.out.println(multiData);
-		//TODO : f ile전송시 object에 지정된 변수명이랑 동일하게 처리하면 400에러 발생
-		System.out.println("File ==>" + partcpFile.getOriginalFilename());
 		
 		return "redirect:/form/multiForm.bt";
 	}
@@ -175,7 +173,7 @@ public class FormTranceObjectController {
 	 * @return
 	 */
 	@RequestMapping(value = "/form/saveMultiParamForm2.bt", method = RequestMethod.POST)
-	public String saveMultiParamForm2(@RequestParam(value="file", required=false) MultipartFile partcpFile, HttpServletRequest request) {
+	public String saveMultiParamForm2(HttpServletRequest request, @RequestParam(value="files", required=false) MultipartFile partcpFile) {
 		System.out.println("================= Param Form ==============================");
 		System.out.println(partcpFile.getOriginalFilename());
 		
@@ -228,9 +226,66 @@ public class FormTranceObjectController {
 		multiData.setFile(file);
 		
 		
+		System.out.println("================= Request getParam ==============================");
+		System.out.println(multiData);
+		System.out.println("==========  ======  =======  ==========  =========  ========");
+		return "redirect:/form/multiParamForm.bt";
+	}
+	
+	
+	/**
+	 * 1. Request Param
+	 * @param hidden
+	 * @param text
+	 * @param search
+	 * @param tel
+	 * @param url
+	 * @param email
+	 * @param password
+	 * @param month
+	 * @param week
+	 * @param time
+	 * @param dateTimeString
+	 * @param num
+	 * @param range
+	 * @param color
+	 * @param checkBox
+	 * @param radio
+	 * @param file
+	 * @return
+	 */
+	@RequestMapping("/form/saveMultiParamForm3.bt")
+	public String saveMultiParamForm3(String hidden, String text, String search, String tel, String url, String email
+								, String password, String month, String week, String time, String dateTimeString, String num
+								, String range, String color, String checkBox, String radio, String file) {
+		
+		
+		MultiData multiData = new MultiData();
+		multiData.setHidden(hidden);
+		multiData.setText(text);
+		multiData.setSearch(search);
+		multiData.setTel(tel);
+		multiData.setUrl(url);
+		multiData.setEmail(email);
+		multiData.setPassword(password);
+		multiData.setMonth(month);
+		multiData.setWeek(week);
+		multiData.setTime(time);
+		multiData.setDateTimeString(dateTimeString);
+		
+		multiData.setNum(Integer.parseInt(num));
+		multiData.setRange(Integer.parseInt(range));
+		
+		multiData.setColor(color);
+		multiData.setCheckBox(checkBox);
+		multiData.setRadio(radio);
+		multiData.setFile(file);
+		
 		System.out.println("================= Param Form ==============================");
 		System.out.println(multiData);
 		System.out.println("==========  ======  =======  ==========  =========  ========");
+		
+		
 		return "redirect:/form/multiParamForm.bt";
 	}
 }
