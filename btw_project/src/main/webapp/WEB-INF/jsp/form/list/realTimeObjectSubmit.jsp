@@ -11,7 +11,7 @@
 <body>
 	<form id="realTime" action="/form/saveRealRestTime.bt" method="post">
 		<div>
-			<h1>Object 실시간 생성</h1>
+			<h1>6. Object 실시간 생성 (진행중)</h1>
 				<input type="text" name="id" value="id_01"> <br/>
 				<input type="text" name="name" value=""><br/>
 				<textarea name="description" rows="5" cols="3"></textarea><br/>

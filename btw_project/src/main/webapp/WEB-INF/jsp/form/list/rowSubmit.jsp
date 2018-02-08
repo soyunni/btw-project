@@ -9,7 +9,7 @@
 <body>
 	
 	<div>
-		<h1>row submit1</h1>
+		<h1>1. Row별 전송 (개별 전송)</h1>
 		<form id="realTime" action="/form/saveRealRestTime.bt" method="post">
 			<input type="text" name="id" value="id_01"> <br/>
 			<input type="text" name="name" value=""><br/>

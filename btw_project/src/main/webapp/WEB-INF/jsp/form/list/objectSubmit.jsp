@@ -11,7 +11,7 @@
 <body>
 	<form id="realTime" action="/form/saveRealRestTime.bt" method="post">
 		<div>
-			<h1>row submit1</h1>
+			<h1>5. Object를 생성하여 전송 (완료)</h1>
 				<input type="text" name="id" value="id_01"> <br/>
 				<input type="text" name="name" value=""><br/>
 				<textarea name="description" rows="5" cols="3"></textarea><br/>
