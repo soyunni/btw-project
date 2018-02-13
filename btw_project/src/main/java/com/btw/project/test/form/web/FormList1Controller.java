@@ -38,6 +38,12 @@ public class FormList1Controller {
 		return "form/list/objectSubmit"; //properties에서 설정한 context(/WEB-INF/jsp/) 하위에 위치한 index.jsp 파일(.jsp생략)을 노출 
 	}
 	
+
+	@RequestMapping("/form/list/realTimeObjectSubmit.bt")
+	public String getRealTimeObjectSubmit() {
+		return "form/list/realTimeObjectSubmit"; //properties에서 설정한 context(/WEB-INF/jsp/) 하위에 위치한 index.jsp 파일(.jsp생략)을 노출 
+	}
+	
 	/**
 	 * 저장하기
 	 * @param testData
